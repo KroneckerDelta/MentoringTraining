@@ -1,5 +1,6 @@
 package de.mic.mentoring.personsample.controller;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.GregorianCalendar;
@@ -30,4 +31,10 @@ public class ControllerTest {
 		assertNotNull(dao.read());
 	}
 
+	@Test
+	public void createPersonShouldNotEmpty() {
+		underTest.actionSaveNewPerson(person);
+		assertFalse(dao.read().isEmpty());
+
+	}
 }

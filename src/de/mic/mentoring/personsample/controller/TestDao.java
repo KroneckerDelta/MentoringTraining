@@ -12,8 +12,8 @@ public class TestDao implements PersonDao {
 	Collection<Person> persons = new ArrayList<>();
 
 	@Override
-	public Person create(Person person) {
-		return person;
+	public void create(Person person) {
+		persons.add(person);
 	}
 
 	@Override

@@ -6,7 +6,7 @@ import de.mic.mentoring.personsample.model.Person;
 
 public interface PersonDao {
 
-	Person create(Person person);
+	void create(Person person);
 
 	Collection<Person> read();
 
