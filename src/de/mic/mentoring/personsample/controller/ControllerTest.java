@@ -2,7 +2,9 @@ package de.mic.mentoring.personsample.controller;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
+import java.util.Collection;
 import java.util.GregorianCalendar;
 
 import org.junit.Before;
@@ -36,5 +38,19 @@ public class ControllerTest {
 		underTest.actionSaveNewPerson(person);
 		assertFalse(dao.read().isEmpty());
 
+	}
+
+	@Test
+	public void createdPersonShouldBeLoadedByDao() {
+		underTest.actionSaveNewPerson(person);
+		Collection<Person> showPersonList = dao.read();
+		assertTrue(showPersonList.contains(person));
+	}
+
+	@Test
+	public void createdPersonShouldBeLoadedByController() {
+		underTest.actionSaveNewPerson(person);
+		Collection<Person> showPersonList = underTest.showPersonList();
+		assertTrue(showPersonList.contains(person));
 	}
 }
