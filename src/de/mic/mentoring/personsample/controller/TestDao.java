@@ -1,33 +1,36 @@
 package de.mic.mentoring.personsample.controller;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
 import de.mic.mentoring.personsample.dao.PersonDao;
 import de.mic.mentoring.personsample.model.Person;
 
 public class TestDao implements PersonDao {
 
+	Collection<Person> persons = new ArrayList<>();
+
 	@Override
 	public Person create(Person person) {
-		// TODO Auto-generated method stub
-		return null;
+		return new Person();
 	}
 
 	@Override
 	public Collection<Person> read() {
-		// TODO Auto-generated method stub
-		return null;
+		return persons;
 	}
 
 	@Override
 	public Person update(Person person) {
-		// TODO Auto-generated method stub
-		return null;
+		// does this work?
+		Collections.replaceAll(new ArrayList<Person>(persons), person, person);
+		return person;
 	}
 
 	@Override
 	public void delete(Person person) {
-		// TODO Auto-generated method stub
+		persons.remove(person);
 
 	}
 
