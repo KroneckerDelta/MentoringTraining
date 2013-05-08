@@ -1,4 +1,4 @@
-package de.mic.mentoring.personsample.view;
+package de.mic.mentoring.personsample.controller;
 
 import java.util.Collection;
 
