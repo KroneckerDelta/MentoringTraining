@@ -1,6 +1,8 @@
-package de.mic.mentoring.personsample;
+package de.mic.mentoring.personsample.dao;
 
 import java.util.Collection;
+
+import de.mic.mentoring.personsample.model.Person;
 
 public interface PersonDao {
 

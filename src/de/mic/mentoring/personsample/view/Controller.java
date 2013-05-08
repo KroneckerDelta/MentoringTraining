@@ -1,4 +1,6 @@
-package de.mic.mentoring.personsample;
+package de.mic.mentoring.personsample.view;
+
+import de.mic.mentoring.personsample.dao.PersonDao;
 
 public class Controller {
 
