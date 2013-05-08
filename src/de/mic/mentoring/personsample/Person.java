@@ -1,4 +1,4 @@
-package de.mic.mentoring;
+package de.mic.mentoring.personsample;
 
 public class Person {
 	Long id;
