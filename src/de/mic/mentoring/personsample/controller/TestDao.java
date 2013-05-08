@@ -13,7 +13,7 @@ public class TestDao implements PersonDao {
 
 	@Override
 	public Person create(Person person) {
-		return new Person();
+		return person;
 	}
 
 	@Override

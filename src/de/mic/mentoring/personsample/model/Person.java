@@ -1,12 +1,21 @@
 package de.mic.mentoring.personsample.model;
 
 import java.util.Date;
+import java.util.UUID;
 
 public class Person {
 	Long id;
 	String lastName;
 	String firstName;
 	Date birthday;
+
+	public Person(String firstName, String lastName, Date birthday) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.birthday = birthday;
+		id = UUID.randomUUID().getLeastSignificantBits();
+	}
 
 	public Long getId() {
 		return id;
