@@ -1,6 +1,9 @@
 package de.mic.mentoring.personsample.view;
 
+import java.util.Collection;
+
 import de.mic.mentoring.personsample.dao.PersonDao;
+import de.mic.mentoring.personsample.model.Person;
 
 public class Controller {
 
@@ -10,12 +13,23 @@ public class Controller {
 		this.dao = dao;
 	}
 
-	public void showPersonList() {
-
+	public Collection<Person> showPersonList() {
+		return dao.read();
 	}
 
 	public void actionShowDetail() {
 
 	}
 
+	public void actionSaveNewPerson(Person person) {
+		dao.create(person);
+	}
+
+	public void actionUpdatePerson(Person person) {
+		dao.update(person);
+	}
+
+	public void actionDeletePerson(Person person) {
+		dao.delete(person);
+	}
 }
